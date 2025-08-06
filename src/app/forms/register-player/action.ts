@@ -14,7 +14,7 @@ const PlayerSchema = z.object({
   experience: z.enum(["beginner", "intermediate", "advanced"]),
 });
 
-export async function registerPlayer(formData: any) {
+export async function registerPlayer(formData: unknown) {
   const parsed = PlayerSchema.safeParse(formData);
   if (!parsed.success) {
     throw new Error("Invalid form data");
